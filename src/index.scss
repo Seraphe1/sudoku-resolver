@@ -1,0 +1,90 @@
+@use 'style-utils/colors';
+@use 'sass:color';
+
+/* ------------------------------- Css global ------------------------------- */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: colors.$body-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  border: 0 none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: transparent;
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+
+button {
+  border: 0 none;
+
+  &[disabled] {
+    pointer-events: none;
+  }
+}
+
+[class^="btn-"] {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: colors.$primary-button-background;
+  color: colors.$primary-button-color;
+  padding: 1rem 2rem;
+
+  &[disabled] {
+    opacity: 0.4;
+  }
+
+  &:hover {
+    background-color: color.scale(colors.$primary-button-background, $lightness: 15%);
+  }
+}
+
+.btn-secondary {
+  background-color: colors.$secondary-button-background;
+  color: colors.$secondary-button-color;
+  padding: 1rem 2rem;
+
+  &[disabled] {
+    opacity: 0.4;
+  }
+
+  &:hover {
+    background-color: color.scale(colors.$secondary-button-background, $lightness: 15%);
+  }
+}
+
+.btn-tertiary {
+  padding: 0.5rem 0.8rem;
+  &:hover {
+    background-color: color.scale(colors.$secondary-button-background, $lightness: 15%);
+  }
+}
